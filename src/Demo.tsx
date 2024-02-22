@@ -39,11 +39,16 @@ const a: number = 1
 # Here are html tags!
 
 <div><u>Hello World!</u></div>
+
 <ul>
   <li>1</li>
   <li>2</li>
   <li>3</li>
 </ul>
+
+<p style="color: red;">
+  test text
+</p>
 `;
 
   return (
