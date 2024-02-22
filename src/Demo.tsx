@@ -47,7 +47,8 @@ const a: number = 1
             const language = className.replace('language-', '');
             return <CodeBlock language={language} value={String(children).replace(/\n$/, '')} />;
           },
-          img: ({ node, ...props }) => <img {...props} style={{width: '150px', height: '150px'}} />
+          img: ({ node, ...props }) => <img {...props} style={{width: '150px', height: '150px'}} />,
+          div: ({ node, ...props }) => <div {...props} />
         }}
       >
         {markdownContent}
