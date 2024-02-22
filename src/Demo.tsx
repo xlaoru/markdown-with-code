@@ -2,6 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import rehypeRaw from "rehype-raw";
 
 interface CodeBlockProps {
   language: string;
@@ -34,6 +35,15 @@ const a: number = 1
 
 # Here is TS logo
 ![TS Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png)
+
+# Here are html tags!
+
+<div><u>Hello World!</u></div>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
 `;
 
   return (
@@ -41,6 +51,7 @@ const a: number = 1
 
     }}>
       <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
         components={{
           code: ({ node, children, ...props }) => {
             const className = props.className as string;
